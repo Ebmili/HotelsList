@@ -6,6 +6,7 @@ import Information from "./Information";
 
 function Card() {
   const [hotels, setHotels] = useState<NewHotelType[]>([]);
+  const [search, setSearch] = useState("")
 
   useEffect(
     () =>
@@ -24,23 +25,26 @@ function Card() {
 
   return (
     <div className="card">
-      <div>
-        <form >
-    <input className="inputsearch" placeholder="search for the hotel"
-    />
-    <button className="inputsearch">Search</button>
-    </form>
+      <div className="search">
+        <input className="search-input" 
+        value={search} type="text" placeholder="Search for the hotel" onChange={(e) => setSearch(e.target.value)}
+        />
     </div>
-    
-      {hotels && hotels.length ? (
-        <div>
-          {hotels?.map(hotel => (
-            <Information key={hotel.id} hotel={hotel} />
-          ))}
+    {!!hotels? (
+      <div>
+    {hotels?.filter((item:NewHotelType) => {
+          if (search === "" && !search.length) {
+            return item;
+          }
+          return item?.title === search;
+        })
+        ?.map((hotel:NewHotelType) => (<Information key={hotel.id} hotel={hotel}
+        /> 
+        ))}
         </div>
-      ) : (
-        <h2 className="no-hotels">There are no hotels. Please add one</h2>
-      )}
+    ):(
+      <h2 className="no-hotels">There are no hotels</h2>
+    )}
     </div>
   );
 }
