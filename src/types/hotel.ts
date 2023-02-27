@@ -14,7 +14,6 @@ export interface NewHotelType {
 }
 
 export interface AddHotelType {
-  title: string;
   description: string;
   feature: string;
   location: string;
@@ -24,4 +23,5 @@ export interface AddHotelType {
   review: string;
   totalPrice: string;
   perNight: string;
+  title: string;
 }
