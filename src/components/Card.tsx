@@ -5,16 +5,10 @@ import { NewHotelType } from "../types/hotel";
 import Information from "./Information";
 
 
-function Card(this: any) {
+function Card() {
   const [hotels, setHotels] = useState<NewHotelType[]>([]);
   const [search, setSearch] = useState("")
-  const [sortState, setSortState] = useState("none");
-
-  const sortMethods = {
-    none: { method: (a, b) => null },
-    ascending: { method: undefined },
-    descending: { method: (a: number, b: number) => (a > b ? -1 : 1) },
-  };
+  const [sortState, setSortState] = useState("");
 
   useEffect(
     () =>
@@ -33,20 +27,20 @@ function Card(this: any) {
 
   return (
     <div className="card">
-
-   
-      <select className="select" defaultValue={'DEFAULT'} onChange={(e) => setSortState(e.target.value)}>
-        <option value="DEFAULT" disabled>Filter By</option>
-        <option value="ascending">per Name</option>
-        <option value="descending">per Price</option>
+      <select className="select" defaultValue={""} onChange={(e) => setSortState(e.target.value)
+      }
+      >
+        <option value="disabled">
+        Filter By
+        </option>
+        <option value="name">
+          Per Name
+        </option>
+        <option value="price">
+        Per Price
+        </option>
+        
       </select>
-      <div>
-        {hotels.sort(sortMethods[sortState].method).map((hotel, id) => (
-          <Information key={hotel.id} hotel={hotel}
-          /> 
-        ))}
-      </div>
-
       <div className="search">
         <input className="inputsearch" 
         value={search} type="text" placeholder="Search for the hotel" onChange={(e) => setSearch(e.target.value)}
@@ -60,14 +54,23 @@ function Card(this: any) {
           }
           return item?.title === search;
         })        
-        
+        .sort((a, b) => {
+          if (sortState === "name") {
+            if (a.title && b.title) return a.title.localeCompare(b.title
+            );   
+          }
+          if (sortState === "price")
+        {
+          return Number(a.perNight) - Number(b.perNight);
+        } return 0;
+      })
         ?.map((hotel:NewHotelType) => (<Information key={hotel.id} hotel={hotel}
         /> 
         ))}
         </div>
-    ):
-    <h2 className="no-hotels">There are no hotels</h2>
-}
+    ) : (
+      <h2 className="no-hotels">There are no hotels. Please add one</h2>
+    )}
     </div>
   );
 }
