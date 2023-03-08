@@ -127,7 +127,7 @@ function Create() {
           value={perNight}
           onChange={(e) => setPerNight(e.target.value)}
         />
-        <button>Add Hotel</button>
+        <button className="add-hotel-btn">Add Hotel</button>
       </form>
     </div>
   );

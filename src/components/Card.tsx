@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { hotelsCollection } from "../lib/controller";
 import { NewHotelType } from "../types/hotel";
 import Information from "./Information";
-import NoHotels from "./NoHotels"
 
 
 function Card() {
@@ -73,7 +72,7 @@ function Card() {
         ))}
         </div>
     ) : (
-      <NoHotels/>
+      <div></div>
     )}
   </div>
 );

@@ -21,7 +21,7 @@ p {
 }
 
 h1 {
-  color: #f3f3f3;
+  color: rgb(242, 245, 247);
   font-weight: 700;
   font-size: 30px;
   margin-top: 10px;
@@ -36,7 +36,7 @@ h1 {
   
 }
 .navbar h1 {
-  color: #f3f3f3;
+  color: rgb(242, 245, 247);
 }
 .navbar .links {
   margin-left: auto;
@@ -68,8 +68,8 @@ h1 {
   margin: 10px auto;
   margin-bottom: 25px;
   border-radius: 16px;
-  background-color: white;
-  border-bottom: 0px solid #fafafa;
+  background-color: rgb(242, 245, 247);
+  border-bottom: 0px solid rgb(242, 245, 247);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -176,7 +176,7 @@ hr {
 }
 
 .region {
-  color: #9fa0a0;
+  color: rgb(77, 77, 77);
   font-size: 15px;
 }
 
@@ -250,7 +250,7 @@ hr {
 }
 .create h2 {
   font-size: 20px;
-  color: #f3f3f3;
+  color: rgb(242, 245, 247);
   margin-bottom: 30px;
 }
 .create input,
@@ -259,7 +259,7 @@ hr {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
-  border: 1px solid #ddd;
+  border: 1px solid rgb(242, 245, 247);
   box-sizing: border-box;
   display: block;
 }
@@ -277,11 +277,12 @@ hr {
 }
 .hotel-details button {
   background: rgb(7, 7, 77);
-  color: #fff;
-  float: right;
-  padding: 10px;
+  color: rgb(242, 245, 247);
+  border: 0;
+  padding: 8px;
+  margin: 5px;
   border-radius: 8px;
-  margin-top: -40px;
+  cursor: pointer;
 }
 
 .inputsearch {
@@ -298,4 +299,9 @@ hr {
   justify-content: center;
   padding: 10px;
   margin: 10px auto;
+}
+
+.add-hotel-btn {
+  background: rgb(7, 7, 77);
+  color: rgb(242, 245, 247);
 }
