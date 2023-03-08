@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { hotelsCollection } from "../lib/controller";
 import { NewHotelType } from "../types/hotel";
 import Information from "./Information";
+import NoHotels from "./NoHotels"
 
 
 function Card() {
@@ -24,6 +25,8 @@ function Card() {
       }),
     []
   );
+
+  
 
   return (
     <div className="card">
@@ -63,16 +66,17 @@ function Card() {
         {
           return Number(a.perNight) - Number(b.perNight);
         } return 0;
-      })
+      } 
+      )
         ?.map((hotel:NewHotelType) => (<Information key={hotel.id} hotel={hotel}
         /> 
         ))}
         </div>
     ) : (
-      <h2 className="no-hotels">There are no hotels. Please add one</h2>
+      <NoHotels/>
     )}
-    </div>
-  );
+  </div>
+);
 }
 
 export default Card;
