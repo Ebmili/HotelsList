@@ -86,12 +86,12 @@ h1 {
 }
 
 .description {
-  margin: 10px;
-  padding: 15px;
+  margin: 15px;
+  padding: 10px;
 }
 
 .description-text {
-  margin: 10px 0;
+  margin: 10px 10px 10px 10px;
   color: gray;
   font-size: 1rem;
   font-style: italic;
@@ -167,7 +167,7 @@ h1 {
   color: rgb(7, 7, 77);
   font-size: 1rem;
   font-weight: 700;
-  margin-right: 100px;
+  margin: 10px 10px 10px 10px;
 }
 
 hr {
@@ -202,6 +202,9 @@ hr {
 
 .edit-text {
   cursor: pointer;
+  margin-top: -30px;
+  margin-left: 150px;
+  cursor: pointer;
   color: rgb(251, 173, 18);
 }
 
@@ -212,7 +215,6 @@ hr {
     font-size: 20px;
   }
   .navbar {
-    padding: 0px;
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -227,15 +229,28 @@ hr {
   }
 
   .hotel-preview {
-    width: 100%;
+    width: 50%;
     margin: 100px auto;
   }
   .highlights {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: raw;
     bottom: 10px;
-    left: 100px;
-    right: 100px;
+    left: 0px;
+    right: 0px;
+  }
+
+  .review-number {
+    background-color: rgb(7, 7, 77);
+    padding: 1px;
+    color: white;
+    margin-right: 7px;
+    border-radius: 4px;
+  }
+  .edit-text {
+    margin-top: -30px;
+    margin-left: 100px;
+    cursor: pointer;
+    color: rgb(251, 173, 18);
   }
 }
 

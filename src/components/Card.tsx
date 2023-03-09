@@ -36,10 +36,10 @@ function Card() {
         Filter By
         </option>
         <option value="name">
-          Per Name
+         Name
         </option>
         <option value="price">
-        Per Price
+         Price
         </option>
         
       </select>

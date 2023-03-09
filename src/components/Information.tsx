@@ -40,12 +40,12 @@ function Information({ hotel, detailsPage }: IProps) {
           <>
             <p className="description-text">
               {hotel.description}{" "}
-              <strong
+              <div
                 className="edit-text"
                 onClick={() => setEditDescription(!editDescription)}
               >
                 Edit Description
-              </strong>
+              </div>
               {editDescription ? (
                 <Edit
                   editDescription={editDescription}
