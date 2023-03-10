@@ -19,7 +19,6 @@ function Details() {
         };
         setHotel(newHotelObj);
       } else {
-
         console.log("No such document");
       }
     };

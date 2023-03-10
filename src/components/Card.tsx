@@ -4,7 +4,6 @@ import { hotelsCollection } from "../lib/controller";
 import { NewHotelType } from "../types/hotel";
 import Information from "./Information";
 
-
 function Card() {
   const [hotels, setHotels] = useState<NewHotelType[]>([]);
   const [search, setSearch] = useState("")
@@ -25,8 +24,6 @@ function Card() {
     []
   );
 
-  
-
   return (
     <div className="card">
       <select className="select" defaultValue={""} onChange={(e) => setSortState(e.target.value)
@@ -41,7 +38,6 @@ function Card() {
         <option value="price">
          Price
         </option>
-        
       </select>
       <div className="search">
         <input className="inputsearch" 

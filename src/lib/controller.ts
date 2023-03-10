@@ -19,6 +19,7 @@ export const addHotel = async (hotelData: AddHotelType) => {
   const newHotel = await addDoc(hotelsCollection, { ...hotelData });
   console.log(`The new hotel was created at ${newHotel.path}`);
 };
+
 export const deleteHotel = async (
   id: string | undefined,
   navigate: NavigateFunction

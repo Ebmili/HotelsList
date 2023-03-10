@@ -38,7 +38,7 @@ function Information({ hotel, detailsPage }: IProps) {
         <span className="feature">{hotel?.feature}</span>
         {detailsPage ? (
           <>
-            <p className="description-text">
+            <div className="description-text">
               {hotel.description}{" "}
               <div
                 className="edit-text"
@@ -53,7 +53,7 @@ function Information({ hotel, detailsPage }: IProps) {
                   id={hotel.id}
                 />
               ) : null}
-            </p>
+            </div>
             <button className="hotel-details" onClick={() => deleteHotel(hotel.id, navigate)}>
               Delete Hotel
             </button>
