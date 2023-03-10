@@ -1,4 +1,4 @@
-CRUD HotelsApp 
+CRUD HotelsList App 
 
 Table of Contents:
 
