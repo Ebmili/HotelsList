@@ -1,9 +1,11 @@
 import { render, screen } from "@testing-library/react";
+import { SetStateAction } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+import Edit from "./components/Edit";
 import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";
 
-describe("Navbar", () => {
+describe("Tests", () => {
   it("renders the correct links", () => {
     render(
       <Router>
@@ -26,4 +28,17 @@ describe("Navbar", () => {
     const notFound = screen.getByText("NotFound");
     expect(notFound).toBeInTheDocument();
   });
+
+  it("renders edit button", () => {
+    render(
+      <Router>
+        <Edit editDescription={false} setEditDescription={function (value: SetStateAction<boolean>): void {
+        throw new Error("Function not implemented.");
+      } }/>
+      </Router>
+    );
+    const button = screen.getByRole("button", {name: 'Update Hotel'});
+    expect(button).toBeInTheDocument();
+  });
+
 });
