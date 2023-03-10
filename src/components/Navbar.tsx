@@ -4,7 +4,7 @@ function Navbar() {
   
   return (
     <nav className="navbar">
-    <h1>Dashboard</h1>
+    <h1>Hotels List</h1>
       <div className="links">
         <Link
           to="/"

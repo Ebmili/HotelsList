@@ -4,7 +4,7 @@ import { hotelsCollection } from "../lib/controller";
 import { NewHotelType } from "../types/hotel";
 import Information from "./Information";
 
-function Card() {
+function Home() {
   const [hotels, setHotels] = useState<NewHotelType[]>([]);
   const [search, setSearch] = useState("")
   const [sortState, setSortState] = useState("");
@@ -74,4 +74,4 @@ function Card() {
 );
 }
 
-export default Card;
+export default Home;
