@@ -74,7 +74,6 @@ function Create() {
           <option value="Swimming pool">Swimming pool</option>
           <option value="Room and Parking">Room and Parking</option>
         </select>
-
         <label>Image URL Link:</label>
         <input
           type="text"
