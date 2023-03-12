@@ -181,7 +181,7 @@ hr {
 }
 
 .region {
-  color: rgb(77, 77, 77);
+  color: rgb(242, 245, 247);
   font-size: 15px;
 }
 
@@ -234,7 +234,7 @@ hr {
   }
 
   .hotel-preview {
-    width: 50%;
+    width: 70%;
     margin: 50px auto;
   }
   .highlights {
@@ -242,6 +242,15 @@ hr {
     bottom: 10px;
     left: 0px;
     right: 0px;
+  }
+
+  .feature {
+    display: center;
+    color: rgb(7, 7, 77);
+    font-size: 1rem;
+    padding-bottom: 8px;
+    font-weight: 700;
+    padding-left: 50px;
   }
 
   .review-number {
@@ -260,11 +269,57 @@ hr {
     cursor: pointer;
     color: rgb(251, 173, 18);
   }
+  .location-image {
+    border-radius: 10px;
+    width: 100%;
+  }
+  .image-container {
+    position: relative;
+    bottom: 0px;
+  }
+  .highlights {
+    align-items: flex-start;
+    flex-direction: row;
+    width: 80%;
+    bottom: 3px;
+    left: 30px;
+    right: 0px;
+    white-space: nowrap;
+    border-radius: 8px;
+    color: rgb(242, 245, 247);
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+  }
+  
+  .highlights-text {
+    align-items: flex-start;
+    flex-direction: column;
+    color: rgb(242, 245, 247);
+  }
+  
+  .highlights-price {
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 10px 0px 10px;
+  }
+  
+  .per-night {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .create {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 .create {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 10px auto;
+  padding: 10px 10px 10px 10px;
   text-align: center;
 }
 .create label {
