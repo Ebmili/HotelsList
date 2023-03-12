@@ -89,6 +89,7 @@ h1 {
 .description {
   margin: 15px;
   padding: 10px;
+  word-break: break-all;
 }
 
 .description-text {
