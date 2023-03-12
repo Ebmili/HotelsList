@@ -205,8 +205,9 @@ hr {
 }
 
 .edit-text {
+  float: right;
   cursor: pointer;
-  margin-left: 200px;
+  margin-left: 100px;
   cursor: pointer;
   color: rgb(251, 173, 18);
 }
@@ -233,7 +234,7 @@ hr {
 
   .hotel-preview {
     width: 50%;
-    margin: 100px auto;
+    margin: 50px auto;
   }
   .highlights {
     flex-direction: raw;
@@ -250,8 +251,11 @@ hr {
     border-radius: 4px;
   }
   .edit-text {
-    margin-top: -30px;
-    margin-left: 100px;
+    display: flex;
+    align-items: column;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 5px;
     cursor: pointer;
     color: rgb(251, 173, 18);
   }
@@ -298,7 +302,7 @@ hr {
   color: rgb(242, 245, 247);
   border: 0;
   padding: 8px;
-  margin: 5px;
+  margin: 15px;
   border-radius: 8px;
   cursor: pointer;
 }
