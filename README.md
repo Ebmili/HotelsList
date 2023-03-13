@@ -19,7 +19,9 @@ then:
 
 3) yarn start
 
-App should trun on localhost.
+App should load on localhost.
+
+Bonus: you can also check my Unit tests by running yarn test on the terminal !
 
 
 🧩 Project description

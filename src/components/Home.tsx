@@ -35,7 +35,7 @@ function Home() {
         defaultValue={""}
         onChange={(e) => setSortState(e.target.value)}
       >
-        <option value="disabled">Filter By</option>
+        <option value="disabled">Sort By</option>
         <option value="name">Name</option>
         <option value="price">Price</option>
       </select>

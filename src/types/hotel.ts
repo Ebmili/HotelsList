@@ -10,7 +10,7 @@ export interface NewHotelType {
   totalPrice?: string;
   perNight?: string;
   id?: string;
-  search?: any;
+  search?: string;
 }
 
 export interface AddHotelType {
