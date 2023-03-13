@@ -107,20 +107,20 @@ h1 {
 .highlights {
   position: absolute;
   bottom: 10px;
-  left: 80px;
-  right: 80px;
+  left: 100px;
+  right: 100px;
   border-radius: 8px;
   color: rgb(242, 245, 247);
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0.8;
   display: flex;
   align-items: center;
+
 }
 
 .highlights-text {
   display: flex;
   padding: 10px;
-  gap: 5px;
   align-items: flex-start;
   flex-direction: column;
   flex: 1;
@@ -129,7 +129,6 @@ h1 {
 .highlights-price {
   display: flex;
   padding-right: 10px;
-  gap: 5px;
   align-items: flex-end;
   flex-direction: column;
   flex: 1;
@@ -137,11 +136,9 @@ h1 {
 
 .per-night {
   display: flex;
-  padding-left: 10px;
-  gap: 5px;
   align-items: flex-start;
   flex-direction: column;
-  flex: 1;
+  gap: 5px;
 }
 
 .moreinfo-btn {
@@ -247,14 +244,6 @@ hr {
     margin-bottom: 0px;
     font-weight: 600;
   }
-  
-  .review-number {
-    background-color: rgb(7, 7, 77);
-    padding: 0px;
-    color: rgb(242, 245, 247);
-    margin-right: 7px;
-    border-radius: 5px;
-  }
 
   .feature {
     display: center;
@@ -338,6 +327,8 @@ hr {
     padding: 20px;
     border: 2px solid rgb(77, 77, 77);
     border-radius: 8px;
+    max-width: 100%;     
+    box-sizing: border-box;
   }
   
   .update-button {
@@ -375,8 +366,9 @@ hr {
   padding: 6px 10px;
   margin: 10px 0;
   border: 1px solid rgb(242, 245, 247);
-  box-sizing: border-box;
   display: block;
+  max-width: 100%;     
+  box-sizing: border-box;
 }
 .create button {
   backround-color: rgb(7, 7, 77);

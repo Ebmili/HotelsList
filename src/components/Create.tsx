@@ -41,6 +41,7 @@ function Create() {
         <label>Hotel title:</label>
         <input
           type="text"
+          max-length="20"
           required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
