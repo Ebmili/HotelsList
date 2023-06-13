@@ -12,25 +12,23 @@ interface IProps {
   isFavorite: false;
 }
 
+interface IProps {
+  hotel?: any;
+  detailsPage?: boolean;
+  id: string;
+  isFavorite: false;
+}
+
 function Information({ hotel, detailsPage }: IProps) {
   const { id } = useParams();
   const getHotel = doc(firestore, `hotels/${id}`);
   const [editDescription, setEditDescription] = useState(false);
-  const [hotelData, setHotelData] = useState<IProps>({ id: "", isFavorite: false });
-  const [isFavorite, setIsFavorite] = useState(false);
   const navigate = useNavigate();
  
   useEffect(() => {
     const fetchHotelData = async () => {
       const docSnap = await getDoc(getHotel);
       if (docSnap.exists()) {
-        const newHotelObj: IProps = {
-          id: docSnap.id,
-          ...docSnap.data(),
-          isFavorite: false,
-        };
-        setHotelData(newHotelObj);
-        setIsFavorite(newHotelObj.isFavorite);
       } else {
         console.log("No such document");
       }
@@ -43,7 +41,6 @@ function Information({ hotel, detailsPage }: IProps) {
       await updateDoc(getHotel, {
         favorites: arrayUnion(hotel.id),
       });
-      setIsFavorite(true);
       console.log("Added to favorites");
     } catch (error) {
       console.error("Error adding to favorites", error);
