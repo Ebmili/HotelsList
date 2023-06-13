@@ -28,10 +28,11 @@ function Details() {
   return (
     <div className="hotel-details">
       {Object.keys(hotel) && Object.keys(hotel).length ? (
-        <Information hotel={hotel} detailsPage />
+        <Information hotel={hotel} detailsPage id={""} isFavorite={false} />
       ) : null}
     </div>
   );
 }
 
 export default Details;
+

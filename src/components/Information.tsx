@@ -1,18 +1,54 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { doc, getDoc, updateDoc, arrayUnion } from "firebase/firestore";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { deleteHotel } from "../lib/controller";
-import { NewHotelType } from "../types/hotel";
 import Edit from "./Edit";
+import { firestore } from "../lib/controller";
 
 interface IProps {
-  hotel: NewHotelType;
+  hotel?: any;
   detailsPage?: boolean;
+  id: string;
+  isFavorite: false;
 }
 
 function Information({ hotel, detailsPage }: IProps) {
+  const { id } = useParams();
+  const getHotel = doc(firestore, `hotels/${id}`);
   const [editDescription, setEditDescription] = useState(false);
-
+  const [hotelData, setHotelData] = useState<IProps>({ id: "", isFavorite: false });
+  const [isFavorite, setIsFavorite] = useState(false);
   const navigate = useNavigate();
+ 
+  useEffect(() => {
+    const fetchHotelData = async () => {
+      const docSnap = await getDoc(getHotel);
+      if (docSnap.exists()) {
+        const newHotelObj: IProps = {
+          id: docSnap.id,
+          ...docSnap.data(),
+          isFavorite: false,
+        };
+        setHotelData(newHotelObj);
+        setIsFavorite(newHotelObj.isFavorite);
+      } else {
+        console.log("No such document");
+      }
+    };
+    fetchHotelData();
+  }, [getHotel]);
+
+  const handleAddToFavorites = async () => {
+    try {
+      await updateDoc(getHotel, {
+        favorites: arrayUnion(hotel.id),
+      });
+      setIsFavorite(true);
+      console.log("Added to favorites");
+    } catch (error) {
+      console.error("Error adding to favorites", error);
+    }
+  };
 
   return (
     <div className="hotel-preview">
@@ -57,6 +93,7 @@ function Information({ hotel, detailsPage }: IProps) {
             <button className="hotel-details" onClick={() => deleteHotel(hotel.id, navigate)}>
               Delete Hotel
             </button>
+            <button className="fav-button" onClick={handleAddToFavorites}>Add to Favorites</button>
           </>
         ) : (
           <Link to={`/hotels/${hotel.id}`}>

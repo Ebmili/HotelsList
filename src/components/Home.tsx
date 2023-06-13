@@ -67,7 +67,7 @@ function Home() {
               return 0;
             })
             ?.map((hotel: NewHotelType) => (
-              <Information key={hotel.id} hotel={hotel} />
+              <Information key={hotel.id} hotel={hotel} id={""} isFavorite={false} />
             ))}
         </div>
       ) : (
